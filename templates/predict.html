@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Prediksi Diabetes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        .result-box {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4 text-center">Hasil Prediksi Risiko Diabetes</h1>
+
+        <div class="result-box">
+            <h3 class="text-primary">Hasil Prediksi:</h3>
+            <p class="fs-4">
+                <strong>{{ hasil }}</strong>
+            </p>
+        </div>
+
+        <div class="result-box">
+            <h3 class="text-success">Tips Pencegahan Diabetes:</h3>
+            <ul>
+                <li>Jaga pola makan sehat dan seimbang (hindari gula berlebih dan makanan olahan).</li>
+                <li>Rutin berolahraga minimal 30 menit per hari.</li>
+                <li>Kontrol berat badan ideal dan hindari obesitas.</li>
+                <li>Kelola stres dengan baik melalui relaksasi atau meditasi.</li>
+                <li>Periksa gula darah secara berkala, terutama jika memiliki riwayat keluarga.</li>
+                <li>Hindari merokok dan konsumsi alkohol berlebihan.</li>
+                <li>Konsumsi air putih yang cukup setiap hari.</li>
+            </ul>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Kembali ke Formulir</a>
+        </div>
+    </div>
+</body>
+</html>
