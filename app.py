@@ -14,13 +14,11 @@ def predict():
     age = float(request.form['age'])
     glucose = float(request.form['glucose'])
     insulin = float(request.form['insulin'])
-
-    # Default values for other features
-    pregnancies = 2
-    blood_pressure = 72
-    skin_thickness = 25
-    bmi = 28.5
-    dpf = 0.5
+    pregnancies = float(request.form['pregnancies'])
+    blood_pressure = float(request.form['blood_pressure'])
+    skin_thickness = float(request.form['skin_thickness'])
+    bmi = float(request.form['bmi'])
+    dpf = float(request.form['dpf'])
 
     features = np.array([[pregnancies, glucose, blood_pressure,
                           skin_thickness, insulin, bmi, dpf, age]])
