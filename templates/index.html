@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Diabetes Gestasional</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-container">
+            <label for="test-mode-toggle">Mode Ujicoba</label>
+            <label class="switch">
+                <input type="checkbox" id="test-mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <h1>Prediksi Risiko Diabetes pada Ibu Hamil</h1>
+        <form action="/" method="post">
+            <div class="input-group">
+                <label for="pregnancies">Jumlah Kehamilan</label>
+                <input type="number" step="any" id="pregnancies" name="pregnancies" placeholder="Contoh: 1" required>
+            </div>
+            <div class="input-group">
+                <label for="glucose">Kadar Glukosa</label>
+                <input type="number" step="any" id="glucose" name="glucose" placeholder="Contoh: 120" required>
+            </div>
+            <div class="input-group">
+                <label for="blood_pressure">Tekanan Darah (mm Hg)</label>
+                <input type="number" step="any" id="blood_pressure" name="blood_pressure" placeholder="Contoh: 80" required>
+            </div>
+            <div class="input-group">
+                <label for="skin_thickness">Tebal Lipatan Kulit (mm)</label>
+                <input type="number" step="any" id="skin_thickness" name="skin_thickness" placeholder="Contoh: 20" required>
+            </div>
+            <div class="input-group">
+                <label for="insulin">Kadar Insulin (mu U/ml)</label>
+                <input type="number" step="any" id="insulin" name="insulin" placeholder="Contoh: 79" required>
+            </div>
+            <div class="input-group">
+                <label for="bmi">Indeks Massa Tubuh (BMI)</label>
+                <input type="number" step="any" id="bmi" name="bmi" placeholder="Contoh: 32.1" required>
+            </div>
+            <div class="input-group">
+                <label for="dpf">Fungsi Silsilah Diabetes</label>
+                <input type="number" step="any" id="dpf" name="dpf" placeholder="Contoh: 0.47" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Usia (Tahun)</label>
+                <input type="number" step="any" id="age" name="age" placeholder="Contoh: 33" required>
+            </div>
+
+            <div class="button-container">
+                <div id="test-buttons-wrapper" style="display: none; gap: 1rem; flex-grow: 1;">
+                    <button type="button" class="btn-test btn-negative" onclick="fillFormNegative()">Isi Contoh Negatif</button>
+                    <button type="button" class="btn-test btn-positive" onclick="fillFormPositive()">Isi Contoh Positif</button>
+                </div>
+                <button type="submit" class="btn-predict">Cek Prediksi</button>
+            </div>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <strong>Hasil Prediksi:</strong><br>
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

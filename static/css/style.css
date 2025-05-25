@@ -1,0 +1,157 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+.container {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+.button-container {
+    grid-column: 1 / -1; /* Memenuhi lebar grid */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.button-container button {
+    flex-grow: 1; /* Tombol bisa membesar mengisi ruang */
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-predict {
+     background: linear-gradient(90deg, #3498db, #2980b9);
+}
+.btn-test {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+}
+.btn-positive {
+     background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+.btn-negative {
+     background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+.button-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.result {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #2c3e50;
+    background-color: #eaf5ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 6px solid #3498db;
+}
+
+/* === STYLE BARU UNTUK TOGGLE SWITCH === */
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.toggle-container label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0; /* Override margin default */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 28px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #27ae60; /* Warna hijau saat aktif */
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
