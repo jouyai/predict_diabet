@@ -19,7 +19,7 @@
             </label>
         </div>
         <h1>Prediksi Risiko Diabetes pada Ibu Hamil</h1>
-        <form action="/" method="post">
+        <form action="{{ url_for('predict') }}" method="post" autocomplete="off">
             <div class="input-group">
                 <label for="pregnancies">Jumlah Kehamilan</label>
                 <input type="number" step="any" id="pregnancies" name="pregnancies" placeholder="Contoh: 1" required>
